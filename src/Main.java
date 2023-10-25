@@ -8,7 +8,7 @@ public class Main {
     private final static int TEXT_LENGTH = 100_000;
     private final static int TEXT_COUNT = 10_000;
     private final static int QUEUE_SIZE = 100;
-    private static List<ThreadData> threadData = new ArrayList<>();
+    private static final List<ThreadData> threadData = new ArrayList<>();
 
     public static String generateText(String letters, int length) {
         Random random = new Random();
@@ -24,9 +24,9 @@ public class Main {
     }
 
     public static void initThreadData() {
-        threadData.add(new ThreadData(new ArrayBlockingQueue<String>(QUEUE_SIZE), 'a', 0));
-        threadData.add(new ThreadData(new ArrayBlockingQueue<String>(QUEUE_SIZE), 'b', 0));
-        threadData.add(new ThreadData(new ArrayBlockingQueue<String>(QUEUE_SIZE), 'c', 0));
+        threadData.add(new ThreadData(new ArrayBlockingQueue<>(QUEUE_SIZE), 'a', 0));
+        threadData.add(new ThreadData(new ArrayBlockingQueue<>(QUEUE_SIZE), 'b', 0));
+        threadData.add(new ThreadData(new ArrayBlockingQueue<>(QUEUE_SIZE), 'c', 0));
     }
 
     public static void main(String[] args) {
